@@ -3,7 +3,7 @@ package Filters;
 import Interfaces.PixelFilter;
 import core.DImage;
 
-public class BasicColorFilter implements PixelFilter {
+public class Identity implements PixelFilter {
 
 
     @Override
