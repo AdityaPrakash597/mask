@@ -6,7 +6,7 @@ import core.DImage;
 
 public class ColorMaskRGB implements PixelFilter, Interactive {
     private short tRed, tGreen, tBlue;
-    private double threshold = 250;
+    private double threshold = 55;
 
     @Override
     public DImage processImage(DImage img) {
@@ -44,6 +44,7 @@ public class ColorMaskRGB implements PixelFilter, Interactive {
     public void keyPressed(char key) {
         if (key == '+') threshold -= 15;
         else if (key == '-') threshold += 15;
+        System.out.println(threshold);
     }
 }
 
