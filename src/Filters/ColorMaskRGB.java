@@ -4,7 +4,7 @@ import Interfaces.Interactive;
 import Interfaces.PixelFilter;
 import core.DImage;
 
-public class ColorMask implements PixelFilter, Interactive {
+public class ColorMaskRGB implements PixelFilter, Interactive {
     private short tRed, tGreen, tBlue;
     private double threshold = 250;
 
@@ -13,21 +13,6 @@ public class ColorMask implements PixelFilter, Interactive {
         short[][] red = img.getRedChannel();
         short[][] green = img.getGreenChannel();
         short[][] blue = img.getBlueChannel();
-        /*
-        ArrayList<Color> colors = new ArrayList<>();
-        for (int i = 0; i < img.getHeight(); i++) {
-            for (int j = 0; j < img.getWidth(); j++) {
-                colors.add(new Color(red[i][j], green[i][j], blue[i][j]));
-            }
-        } ArrayList<Double> dists = new ArrayList<>();
-        for (Color c : colors) {
-            dists.add(Math.sqrt(
-                            (c.getR() - tRed) * (c.getR() - tRed) +
-                            (c.getG() - tGreen) * (c.getG() - tGreen) +
-                            (c.getB() - tBlue) * (c.getB() - tBlue)
-                    )
-            );
-        }*/
         for (int i = 0; i < img.getHeight(); i++) {
             for (int j = 0; j < img.getWidth(); j++) {
                 if (distance(tRed, tGreen, tBlue, red[i][j], green[i][j], blue[i][j]) < threshold) {
