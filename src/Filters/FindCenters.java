@@ -18,6 +18,7 @@ public class FindCenters implements PixelFilter {
         short[][] blue = img.getBlueChannel();
 
         ArrayList<Point> points = this.initializePointList(grid);
+        if (points.size() == 0) return img;
         Cluster[] clusters = this.initializeClusters(points);
         boolean stable;
         do {
