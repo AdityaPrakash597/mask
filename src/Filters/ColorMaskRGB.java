@@ -7,7 +7,8 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class ColorMaskRGB implements PixelFilter {
-    private final Color targetGreen = new Color((short) 75, (short) 172, (short) 33);
+   // private final Color targetGreen = new Color((short) 75, (short) 172, (short) 33);
+    private final Color targetGreen = new Color((short) 83, (short) 140, (short) 80);
     private final Color targetYellow = new Color((short) 240, (short) 201, (short) 2);
     private final Color targetBlue = new Color((short) 8, (short) 45, (short) 175);
     private final Color targetOrange =  new Color((short) 195, (short) 74, (short) 10);
