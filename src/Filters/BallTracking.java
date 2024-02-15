@@ -10,11 +10,12 @@ public class BallTracking implements PixelFilter {
     private PixelFilter blur = new Blur();
     private PixelFilter colorMaskRGB = new ColorMaskRGB();
     private PixelFilter colorMaskHSV = new ColorMaskHSV();
-    private PixelFilter findCenters = new FindCenters(3);
+    private PixelFilter findCenters = new FindCenters();
     @Override
     public DImage processImage(DImage img) {
         img = blur.processImage(img);
         img = colorMaskRGB.processImage(img);
+        //for (int i = 0; i < 5; i++) img = blur.processImage(img);
         img = findCenters.processImage(img);
 
         return img;

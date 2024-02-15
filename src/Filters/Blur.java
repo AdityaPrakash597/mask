@@ -19,6 +19,7 @@ public class Blur implements PixelFilter {
         short[][] green = applyKernel(img.getGreenChannel(), gaussianBlurKernel);
         short[][] blue = applyKernel(img.getBlueChannel(), gaussianBlurKernel);
         img.setColorChannels(red, green, blue);
+
         return img;
     }
 
